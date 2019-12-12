@@ -11,7 +11,5 @@
 
 #import "NSBundle+DAUtils.h"
 
-#import "CYLTabBarController.h"
-
 
 #endif /* demo_Swift_h */

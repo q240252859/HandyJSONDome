@@ -18,28 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var ATOPTabBarC : CYLTabBarController = {
-        let tab = CYLTabBarController()
-        
-        let images = ["menu_ico_home","menu_ico_market","menu_ico_trans","menu_ico_asset","menu_ico_user"]
-        let imagesel = ["menu_ico_home_active","menu_ico_market_active","menu_ico_trans_active","menu_ico_asset_active","menu_ico_user_active"]
-        let titleArr = ["首页","行情","交易","财务","我的"]
-        
-        var taBarItemArr   = [] as! [Dictionary<String, Any>]
-        
-        for (i,srr) in images.enumerated(){
-            let dic :Dictionary = [CYLTabBarItemTitle:titleArr[i],CYLTabBarItemImage:images[i],CYLTabBarItemSelectedImage:imagesel[i]]
-            taBarItemArr.append(dic)
-        }
-        
-        
-        
-        
-        
-        tab.tabBarItemsAttributes = taBarItemArr
-        tab.setViewControllers([HoemViewController(),HoemViewController(),HoemViewController(),HoemViewController(),HoemViewController()], animated: true)
-        return tab
-    }()
+ 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 

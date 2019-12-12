@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		28F22610EFEBAA741CF4A461 /* Pods_demo_demoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C073D8CF517E302FA20E823 /* Pods_demo_demoUITests.framework */; };
 		3EAD3FB90DBACC90386B174A /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46D220CE1B9FF1FA4C16711 /* Pods_demo.framework */; };
+		4584A88023A1F0EE00F742F0 /* demo-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584A87F23A1F0ED00F742F0 /* demo-Swift.h */; };
 		4586316D2399F842007F13C3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4586316C2399F842007F13C3 /* TabBarViewController.swift */; };
 		458631772399FA41007F13C3 /* DAConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4586316F2399FA41007F13C3 /* DAConfig.m */; };
 		458631782399FA41007F13C3 /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458631702399FA41007F13C3 /* String+LocalizeTableName.swift */; };
@@ -78,6 +79,7 @@
 		04A1760824718CE6A4B3E6E8 /* Pods-demoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoTests.debug.xcconfig"; path = "Target Support Files/Pods-demoTests/Pods-demoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0E282C13F911EE3AE4D987E7 /* Pods-demo-demoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo-demoUITests.debug.xcconfig"; path = "Target Support Files/Pods-demo-demoUITests/Pods-demo-demoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		14ED73535A6FB0EC0ACF0CCA /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		4584A87F23A1F0ED00F742F0 /* demo-Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "demo-Swift.h"; sourceTree = "<group>"; };
 		4586316C2399F842007F13C3 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		4586316F2399FA41007F13C3 /* DAConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAConfig.m; sourceTree = "<group>"; };
 		458631702399FA41007F13C3 /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizeTableName.swift"; sourceTree = "<group>"; };
@@ -88,7 +90,6 @@
 		458631752399FA41007F13C3 /* String+LocalizedBundleTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizedBundleTableName.swift"; sourceTree = "<group>"; };
 		458631762399FA41007F13C3 /* NSBundle+DAUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+DAUtils.m"; sourceTree = "<group>"; };
 		4586317D2399FA86007F13C3 /* ZBStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZBStyle.swift; sourceTree = "<group>"; };
-		458631832399FBCC007F13C3 /* demo-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "demo-Swift.h"; path = "/Users/liujinsheng/Desktop/demo/demo/demo-Swift.h"; sourceTree = "<absolute>"; };
 		45863184239A0120007F13C3 /* HoemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoemViewController.swift; sourceTree = "<group>"; };
 		45885A5123976D06008758E1 /* demo_beta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = demo_beta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45885A5323976D06008758E1 /* demo_beta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = demo_beta.h; sourceTree = "<group>"; };
@@ -227,7 +228,7 @@
 				4586316C2399F842007F13C3 /* TabBarViewController.swift */,
 				4586317D2399FA86007F13C3 /* ZBStyle.swift */,
 				45885A732397A952008758E1 /* SystemConfig.swift */,
-				458631832399FBCC007F13C3 /* demo-Swift.h */,
+				4584A87F23A1F0ED00F742F0 /* demo-Swift.h */,
 				45863184239A0120007F13C3 /* HoemViewController.swift */,
 				4586316E2399FA41007F13C3 /* LocalizableTool */,
 				459844F323964D49009ACC42 /* Main.storyboard */,
@@ -287,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45885A6323976D07008758E1 /* demo_beta.h in Headers */,
+				4584A88023A1F0EE00F742F0 /* demo-Swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,7 +831,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liujinsheng/Desktop/demo/demo/demo-Swift.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/demo/demo-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -850,7 +852,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liujinsheng/Desktop/demo/demo/demo-Swift.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/demo/demo-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -1,8 +1,5 @@
 PODS:
   - Alamofire (4.9.0)
-  - CYLTabBarController (1.28.3):
-    - CYLTabBarController/Core (= 1.28.3)
-  - CYLTabBarController/Core (1.28.3)
   - ESTabBarController-swift (2.7)
   - HandyJSON (5.0.1)
   - Log (1.0)
@@ -15,7 +12,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - CYLTabBarController
   - ESTabBarController-swift
   - HandyJSON
   - Log (~> 1.0)
@@ -25,7 +21,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - CYLTabBarController
     - ESTabBarController-swift
     - Log
     - Realm
@@ -36,7 +31,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
-  CYLTabBarController: cd14c6260a38337600737873a57b3114c7065a8e
   ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
   HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
   Log: 5e368c9528db07517d18d2d04ff5fe2b6f5a1e21
@@ -44,6 +38,6 @@ SPEC CHECKSUMS:
   RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: 2a9305c4e934025223ac9218c0758f1e9866d96d
+PODFILE CHECKSUM: 9d9591e2043b271ad88f192b4db1e49a5c602736
 
 COCOAPODS: 1.8.4

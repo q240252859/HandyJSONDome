@@ -40,28 +40,7 @@ class TabBarViewController: ESTabBarController {
         
     }
     
-    var ATOPTabBarC : CYLTabBarController = {
-        let tab = CYLTabBarController()
-        
-        let images = ["menu_ico_home","menu_ico_market","menu_ico_trans","menu_ico_asset","menu_ico_user"]
-        let imagesel = ["menu_ico_home_active","menu_ico_market_active","menu_ico_trans_active","menu_ico_asset_active","menu_ico_user_active"]
-        let titleArr = ["首页".localized(),"行情".localized(),"交易".localized(),"财务".localized(),"我的".localized()]
-        
-        var taBarItemArr   = [] as! [Dictionary<String, Any>]
-        
-        for (i,srr) in images.enumerated(){
-            let dic :Dictionary = [CYLTabBarItemTitle:titleArr[i],CYLTabBarItemImage:images[i],CYLTabBarItemSelectedImage:imagesel[i]]
-            taBarItemArr.append(dic)
-        }
-        
-        tab.setViewControllers([HoemViewController(),HoemViewController(),HoemViewController(),HoemViewController(),HoemViewController()], animated: true)
-        
-        
-        
-        tab.tabBarItemsAttributes = taBarItemArr
-        
-        return tab
-    }()
+   
     let manager = NetworkReachabilityManager()
     
     /// 首页Tab

@@ -4,12 +4,17 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'demo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  
 pod 'HandyJSON'
+
 pod 'RealmSwift'
+
 pod 'Alamofire'
+
 pod 'ESTabBarController-swift'
+
 pod 'SnapKit', '~> 4.0.0’
-pod 'CYLTabBarController'
+
 
 
 # 日志输出管理
