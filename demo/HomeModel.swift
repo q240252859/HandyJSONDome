@@ -137,6 +137,14 @@ class BaseModel:HandyJSON  {
     }
     
 }
+class PanModel: BaseModel {
+    
+    @objc dynamic var url: String = ""
+    @objc dynamic var params: String = ""
+    @objc dynamic var result: String = ""
+    
+   
+}
 
 
 

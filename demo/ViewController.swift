@@ -18,7 +18,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //
+        
+        
+        //请求数据
+        RemoteService.sharedInstance.marketData("101010100") { (BaseModel
+            , HomeModel) in
+            
+        }
+        
+   
          test()
         
         
@@ -65,11 +73,6 @@ func test() -> Void {
     print("--3-",realmDB.configuration.fileURL ?? "")
     
     
-    //请求数据
-    RemoteService.sharedInstance.marketData("101010100") { (BaseModel
-        , HomeModel) in
-        
-    }
-    RemoteService.sharedInstance
     
+ 
 }

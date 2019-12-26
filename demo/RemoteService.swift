@@ -461,7 +461,7 @@ class RemoteService: NSObject {
         let url = APIServerEnvironmentType.pro.apiUrl + "weather_mini"
 
         self.sendJsonRequestByGet(url, parameters: params, useCache: true) { (json, isCache) -> Void in
-            
+        //使用
             let baseData = BaseModel.deserialize(from: json)
             let model = HomeModel.deserialize(from: baseData?.data as?[String:Any])
             
