@@ -1,145 +1,189 @@
-# HandyJSONDome
-@_exported进口HandyJSON //类似PCH
-@_exported导入RealmSwift
-
-//不带数据库
-类BaseModel：HandyJSON {
-    @objc动态无功状态：字符串= “” //返回代码
-     @objc动态无功递减：字符串= “” //返回提示信息
-     @objc动态无功isCache：BOOL =假//是否本地缓存
-     @objc动态无功方法：字符串=“”
-     @objc动态var数据：是吗？
-    必需的init（）{
+@_exported import HandyJSON //类似PCH
+@_exported import RealmSwift
+import UIKit    
+    
+    
+    
+    
+    // 不使用数据库
+    class BaseModel:HandyJSON  {
+    @objc dynamic var status: String = ""          //返回代码
+    @objc dynamic var desc: String = ""       //返回提示信息
+    @objc dynamic var isCache: Bool = false   //是否本地缓存
+    @objc dynamic var method: String = ""
+    @objc dynamic var data:Any?
+    required init() {
     }
     
 }
-类PanModel：BaseModel {
+class PanModel: BaseModel {
     
-    @objc动态变量网址：String =“”
-     @objc动态变量参数：String =“”
-     @objc动态变量结果：String =“”
+    @objc dynamic var url: String = ""
+    @objc dynamic var params: String = ""
+    @objc dynamic var result: String = ""
     
    
 }
 //使用数据库
-// Class BaseModel：HandyJSON {
-//     @objc动态var代码：String =“”
-//     @objc动态var消息：字符串？
-//     @objc动态var数据：是吗？
-//必需的init（）{
-//}
+//class BaseModel: HandyJSON{
+//    @objc dynamic var code: String = ""
+//    @objc dynamic var message:String?
+//    @objc dynamic var data:Any?
+//    required init() {
+//    }
 //
 //
-// func mapping（mapper：HelpingMapper）{
-//映射器<<<
-// ///系统名冲突
-// self.message <-“ description”
-//}
+//    func mapping(mapper: HelpingMapper) {
+//        mapper <<<
+//            /// 系统名冲突
+//            self.message <-- "description"
+//    }
 //}
 
-类loginModel：RealmObject，HandyJSON {
-    @objc动态变量标志：String =“”
-     @objc动态变量电话：String =“”
-     @objc动态变量昵称：String =“”
-     @objc动态变量性别：String =“”
-     @objc动态变量生日：String =“”
-     @objc动态变量 avatar：String =“”
-     @objc动态变量accessToken：String =“”
-     @objc动态变量refreshToken：String =“”
-     @objc动态变量whiteListStatus：String =“”
-     @objc动态变量userStatus：String =“”
-     @objc动态var isSecurityPasswordExist：String =“”
-    @objc动态var securityTime：String =“”
+class loginModel: RealmObject, HandyJSON {
+    @objc dynamic var flag:String = ""
+    @objc dynamic var phone:String = ""
+    @objc dynamic var nick:String = ""
+    @objc dynamic var gender:String = ""
+    @objc dynamic var birthday:String = ""
+    @objc dynamic var avatar:String = ""
+    @objc dynamic var accessToken:String = ""
+    @objc dynamic var refreshToken:String = ""
+    @objc dynamic var whiteListStatus:String = ""
+    @objc dynamic var userStatus:String = ""
+    @objc dynamic var isSecurityPasswordExist:String = ""
+    @objc dynamic var securityTime:String = ""
     
-    /// *任何对象都不能保存数据库
-    // primaryKey（）可以设置模型的主键。
-    覆盖静态函数primaryKey（）->字符串？{
-        返回“ accessToken”
+    ///* Any 对象 不能存 数据库
+    //    primaryKey() 可以设置模型的主键。
+    override static func primaryKey() -> String? {
+        return "accessToken"
     }
     
-    / **
+    /**
      获取所有数据
-     * /
-    类func getLoginModelArrData（）-> [loginModel] {
-        let realmDB = RealmDBHelper.sharedInstance // Realm数据库
-        让数据：结果<loginModel> = realmDB.objects（loginModel.self）
+     */
+    class func getLoginModelArrData()-> [loginModel] {
+        let realmDB = RealmDBHelper.sharedInstance  //Realm数据库
+        let datas: Results<loginModel> = realmDB.objects(loginModel.self)
         
-        返回datas.toArray（）
+        return datas.toArray()
     }
     
-    / **
-     发现
-     * /
-    class func getDetailData（accessToken：String）-> loginModel？{
-        let realmDB = RealmDBHelper.sharedInstance // Realm数据库////增删改查查（升序/降序）....
-        让数据：结果<loginModel> = realmDB.objects（loginModel.self）.filter（“ accessToken ='\（accessToken）'”）
-        如果datas.count> 0 {
-            返回数据[0]
+    /**
+     查找
+     */
+    class func getDetailData(accessToken : String)-> loginModel?{
+        let realmDB = RealmDBHelper.sharedInstance  //Realm数据库 ///增删改查 查(升序/降序)....
+        let datas: Results<loginModel> = realmDB.objects(loginModel.self).filter(" accessToken = '\(accessToken)'")
+        if datas.count > 0{
+            return datas[0]
             
-        }其他{
-            返回零
+        }else{
+            return nil
         }
     }
     
 }
 
-类HomeModel：RealmObject，HandyJSON {
-    @objc动态变量 city：String =“”
-     @objc动态变量昨天：HomeYesterdayModel？
-    @objc动态var预测：[HomeForecastModel]？
-    @objc动态var ganmao：String =“”
-     @objc动态var wendu：String =“”
+class HomeModel: RealmObject, HandyJSON {
+    @objc dynamic var city:String = ""
+    @objc dynamic var yesterday:HomeYesterdayModel?
+    @objc dynamic var forecast:[HomeForecastModel]?
+    @objc dynamic var ganmao:String = ""
+    @objc dynamic var wendu:String = ""
     
     
-    /// *任何对象都不能保存数据库
-    // primaryKey（）可以设置模型的主键。
-    覆盖静态函数primaryKey（）->字符串？{
-        返回“城市”
+    ///* Any 对象 不能存 数据库
+    //    primaryKey() 可以设置模型的主键。
+    override static func primaryKey() -> String? {
+        return "city"
     }
-    //忽略原文
-    覆盖静态函数ignoreProperties（）-> [String] {
-        返回[“预测”]
+    //忽略 数组
+    override static func ignoredProperties() -> [String] {
+        return ["forecast"]
     }
     
     
 }
-class HomeYesterdayModel：RealmObject，HandyJSON {
+class HomeYesterdayModel: RealmObject, HandyJSON {
     
-    @objc动态变量 date：String =“”
-     @objc动态变量 high：String =“”
-     @objc动态变量 fx：String =“”
-     @objc动态变量 low：String =“”
-     @objc动态变量 fl：String =“”
-     @objc动态var类型：String =“”
+    @objc dynamic var date:String = ""
+    @objc dynamic var high:String = ""
+    @objc dynamic var fx:String = ""
+    @objc dynamic var low:String = ""
+    @objc dynamic var fl:String = ""
+    @objc dynamic var type:String = ""
     
-    /// *任何对象都不能保存数据库
-    // primaryKey（）可以设置模型的主键。
-    覆盖静态函数primaryKey（）->字符串？{
-        归期”
-    }
-    
-    
-    
-}
-class HomeForecastModel：RealmObject，HandyJSON {
-    @objc动态变量 date：String =“”
-     @objc动态变量 high：String =“”
-     @objc动态变量fengli：String =“”
-     @objc动态变量 low：String =“”
-     @objc动态变量fengxiang：String =“”
-     @objc动态var类型：String =“”
-    
-    
-    /// *任何对象都不能保存数据库
-    // primaryKey（）可以设置模型的主键。
-    覆盖静态函数primaryKey（）->字符串？{
-        归期”
+    ///* Any 对象 不能存 数据库
+    //    primaryKey() 可以设置模型的主键。
+    override static func primaryKey() -> String? {
+        return "date"
     }
     
     
     
 }
-//使用
+class HomeForecastModel: RealmObject, HandyJSON {
+    @objc dynamic var date:String = ""
+    @objc dynamic var high:String = ""
+    @objc dynamic var fengli:String = ""
+    @objc dynamic var low:String = ""
+    @objc dynamic var fengxiang:String = ""
+    @objc dynamic var type:String = ""
+    
+    
+    ///* Any 对象 不能存 数据库
+    //    primaryKey() 可以设置模型的主键。
+    override static func primaryKey() -> String? {
+        return "date"
+    }
+    
+    
+    
+}
 
- 让baseData = BaseModel.deserialize（来自：json）
-            让模型= HomeModel.deserialize（来自：baseData？.data as？[String：Any]）
+
+
+// 使用
+    
+      let jsonString = "{\"code\":\"000000\",\"description\":\"success\",\"data\":[{\"flag\":\"nerUser\",\"phone\":\"18739966912\",\"nick\":\"moqigogo\",\"gender\":\"1\",\"birthday\":\"19900412\",\"avatar\":\"touxiangurl\",\"accessToken\":\"12123293829147318412fjer\",\"refreshToken\":\"28198e1euiwhdjs\",\"whiteListStatus\":\"1\",\"userStatus\":\"2\",\"isSecurityPasswordExist\":\"1\",\"securityTime\":\"123131\"}]}"
+    
+    let baseData = BaseModel.deserialize(from: jsonString)
+    let model = loginModel.deserialize(from: baseData?.data as?[String:Any])
+    let model1 = [loginModel].deserialize(from: baseData?.data as?[Any])
+    
+    
+   /**
+     获取行情
+     */
+    func marketData(_ types: String,
+                    callback:@escaping (BaseModel, HomeModel) -> Void) {
+        
+//        http://wthrcdn.etouch.cn/weather_mini?citykey=101010100
+ 
+        
+        let params = ["citykey": types]
+        
+        let url = APIServerEnvironmentType.pro.apiUrl + "weather_mini"
+
+        self.sendJsonRequestByGet(url, parameters: params, useCache: true) { (json, isCache) -> Void in
+        //使用
+            let baseData = BaseModel.deserialize(from: json)
+            let model = HomeModel.deserialize(from: baseData?.data as?[String:Any])
+            
+           
+            callback(baseData ?? BaseModel() , model ?? HomeModel())
+        }
+    }
+    
+    
+    //最终
+      //请求数据
+        RemoteService.sharedInstance.marketData("101010100") { (BaseModel
+            , HomeModel) in
+            
+        }
+        
+            
+            
